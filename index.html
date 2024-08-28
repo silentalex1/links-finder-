@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Links Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <style>
         body {
             background-color: #0e1217;
@@ -48,6 +49,7 @@
             border-radius: 25px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
         }
 
         .section:hover {
@@ -84,6 +86,7 @@
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
             text-align: center;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+            position: relative;
         }
 
         .links-list li:hover {
@@ -116,6 +119,7 @@
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.3s ease;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+            position: relative;
         }
 
         .cta-button:hover {
@@ -149,6 +153,23 @@
             margin-bottom: 30px;
         }
 
+        .cta-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .cta-button {
+                margin-bottom: 15px;
+            }
+        }
+
         footer {
             background-color: #2c3e50;
             color: #f7f7f7;
@@ -178,14 +199,85 @@
             transform: scale(1.1);
         }
 
+        /* Additional Enhancements */
+        .section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            opacity: 0.2;
+            z-index: -1;
+            border-radius: 25px;
+        }
+
+        .links-list li::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            opacity: 0.1;
+            z-index: -1;
+            border-radius: 15px;
+        }
+
+        .cta-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            opacity: 0.1;
+            z-index: -1;
+            border-radius: 10px;
+        }
+
+        .section .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            opacity: 0.2;
+            z-index: -1;
+            border-radius: 25px;
+        }
+
+        .links-list li .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            opacity: 0.1;
+            z-index: -1;
+            border-radius: 15px;
+        }
+
+        .cta-button .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            opacity: 0.1;
+            z-index: -1;
+            border-radius: 10px;
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 36px;
-            }
-
-            .cta-button {
-                font-size: 18px;
-                padding: 12px 28px;
             }
 
             .section h2 {
@@ -208,38 +300,43 @@
         <section class="visuals">
             <h2>Find Your Links</h2>
             <p>Explore a wide range of links to <span class="highlight">Proxies</span>, <span class="highlight">Movies</span>, <span class="highlight">Games</span>, and more. Navigate through our curated sections to find exactly what you're looking for.</p>
-            <a href="#proxies" class="cta-button">Explore Proxies</a>
-            <a href="#movies" class="cta-button">Browse Movies</a>
-            <a href="#games" class="cta-button">Discover Games</a>
+            <div class="cta-buttons">
+                <a href="#proxies" class="cta-button">Explore Proxies</a>
+                <a href="#movies" class="cta-button">Browse Movies</a>
+                <a href="#games" class="cta-button">Discover Games</a>
+            </div>
         </section>
 
         <section id="proxies" class="section">
+            <div class="gradient-overlay"></div>
             <h2>Proxies</h2>
             <ul class="links-list">
-                <li><a href="#">Proxy Link 1</a></li>
-                <li><a href="#">Proxy Link 2</a></li>
-                <li><a href="#">Proxy Link 3</a></li>
-                <li><a href="#">Proxy Link 4</a></li>
+                <li><div class="gradient-overlay"></div><a href="#">Proxy Link 1</a></li>
+                <li><div class="gradient-overlay"></div><a href="#">Proxy Link 2</a></li>
+                <li><div class="gradient-overlay"></div><a href="#">Proxy Link 3</a></li>
+                <li><div class="gradient-overlay"></div><a href="#">Proxy Link 4</a></li>
             </ul>
         </section>
 
         <section id="movies" class="section">
+            <div class="gradient-overlay"></div>
             <h2>Movies</h2>
             <ul class="links-list">
-                <li><a href="#">Movie Link 1</a></li>
-                <li><a href="#">Movie Link 2</a></li>
-                <li><a href="#">Movie Link 3</a></li>
-                <li><a href="#">Movie Link 4</a></li>
+                <li><div class="gradient-overlay"></div><a href="#">Movie Link 1</a></li>
+                <li><div class="gradient-overlay"></div><a href="#">Movie Link 2</a></li>
+                <li><div class="gradient-overlay"></div><a href="#">Movie Link 3</a></li>
+                <li><div class="gradient-overlay"></div><a href="#">Movie Link 4</a></li>
             </ul>
         </section>
 
         <section id="games" class="section">
+            <div class="gradient-overlay"></div>
             <h2>Games</h2>
             <ul class="links-list">
-                <li><a href="#">Game Link 1</a></li>
-                <li><a href="#">Game Link 2</a></li>
-                <li><a href="#">Game Link 3</a></li>
-                <li><a href="#">Game Link 4</a></li>
+                <li><div class="gradient-overlay"></div><a href="#">Game Link 1</a></li>
+                <li><div class="gradient-overlay"></div><a href="#">Game Link 2</a></li>
+                <li><div class="gradient-overlay"></div><a href="#">Game Link 3</a></li>
+                <li><div class="gradient-overlay"></div><a href="#">Game Link 4</a></li>
             </ul>
         </section>
     </div>
